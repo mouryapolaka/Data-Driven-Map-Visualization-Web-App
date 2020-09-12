@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 import folium
 import pandas as pd
-import csv
 
 app = Flask(__name__, static_url_path = "", static_folder = "assets")
 
