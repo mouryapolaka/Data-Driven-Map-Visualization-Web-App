@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8c687f70b33541358db609d1607d7aa5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_8c687f70b33541358db609d1607d7aa5" ></div>
+        
+</body>
+<script>    
+    
+            var map_8c687f70b33541358db609d1607d7aa5 = L.map(
+                "map_8c687f70b33541358db609d1607d7aa5",
+                {
+                    center: [-31.840233, 145.612793],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bb9b4d98ef494841bb637e39ea5a6fd8 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8c687f70b33541358db609d1607d7aa5);
+        
+    
+            var marker_aaf0b62c5cb6449086ceb64d03e13ae8 = L.marker(
+                [-33.9529, 151.1376],
+                {}
+            ).addTo(map_8c687f70b33541358db609d1607d7aa5);
+        
+    
+        var popup_b3ac920cd73e452e9fd27ca7f4358c6e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3fc87fdc141f4057952bc0b3b3efa3c9 = $(`<div id="html_3fc87fdc141f4057952bc0b3b3efa3c9" style="width: 100.0%; height: 100.0%;">Rockdale</div>`)[0];
+            popup_b3ac920cd73e452e9fd27ca7f4358c6e.setContent(html_3fc87fdc141f4057952bc0b3b3efa3c9);
+        
+
+        marker_aaf0b62c5cb6449086ceb64d03e13ae8.bindPopup(popup_b3ac920cd73e452e9fd27ca7f4358c6e)
+        ;
+
+        
+    
+    
+            var marker_d99f7f6142934de08671b556c32ca072 = L.marker(
+                [-36.5013, 148.3104],
+                {}
+            ).addTo(map_8c687f70b33541358db609d1607d7aa5);
+        
+    
+        var popup_379b5bd3ee4647f895fa8975d550cea9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6df965136b2548edb3efe9ae3fa99d0d = $(`<div id="html_6df965136b2548edb3efe9ae3fa99d0d" style="width: 100.0%; height: 100.0%;">Thredbo</div>`)[0];
+            popup_379b5bd3ee4647f895fa8975d550cea9.setContent(html_6df965136b2548edb3efe9ae3fa99d0d);
+        
+
+        marker_d99f7f6142934de08671b556c32ca072.bindPopup(popup_379b5bd3ee4647f895fa8975d550cea9)
+        ;
+
+        
+    
+    
+            var marker_bb675d99e0ff4d28873ead853a36fea1 = L.marker(
+                [-35.2809, 149.13],
+                {}
+            ).addTo(map_8c687f70b33541358db609d1607d7aa5);
+        
+    
+        var popup_f4c3a00537e342899ce3318758a7d94a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c5ffde1e068f471c940d90dd7ec61b3c = $(`<div id="html_c5ffde1e068f471c940d90dd7ec61b3c" style="width: 100.0%; height: 100.0%;">Canberra</div>`)[0];
+            popup_f4c3a00537e342899ce3318758a7d94a.setContent(html_c5ffde1e068f471c940d90dd7ec61b3c);
+        
+
+        marker_bb675d99e0ff4d28873ead853a36fea1.bindPopup(popup_f4c3a00537e342899ce3318758a7d94a)
+        ;
+
+        
+    
+    
+            var marker_8b84239eea4a4720a20d36734419d908 = L.marker(
+                [-35.0481, 150.7447],
+                {}
+            ).addTo(map_8c687f70b33541358db609d1607d7aa5);
+        
+    
+        var popup_874763753f674f89838b3fd523775385 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2df5500ad29949978b4fb54719322328 = $(`<div id="html_2df5500ad29949978b4fb54719322328" style="width: 100.0%; height: 100.0%;">Jervis Bay</div>`)[0];
+            popup_874763753f674f89838b3fd523775385.setContent(html_2df5500ad29949978b4fb54719322328);
+        
+
+        marker_8b84239eea4a4720a20d36734419d908.bindPopup(popup_874763753f674f89838b3fd523775385)
+        ;
+
+        
+    
+    
+            var marker_71b3eeb602c042bfab50a0e28fdf8f66 = L.marker(
+                [-34.4278, 150.8931],
+                {}
+            ).addTo(map_8c687f70b33541358db609d1607d7aa5);
+        
+    
+        var popup_ece27904640a404aba66142e2ddc8a69 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_675e3fa74aa241e88d74d1f72e41d87c = $(`<div id="html_675e3fa74aa241e88d74d1f72e41d87c" style="width: 100.0%; height: 100.0%;">Wollongong</div>`)[0];
+            popup_ece27904640a404aba66142e2ddc8a69.setContent(html_675e3fa74aa241e88d74d1f72e41d87c);
+        
+
+        marker_71b3eeb602c042bfab50a0e28fdf8f66.bindPopup(popup_ece27904640a404aba66142e2ddc8a69)
+        ;
+
+        
+    
+    
+            var marker_5fc58652ab4f407eb8c20bd51d730ce3 = L.marker(
+                [-32.9283, 151.7817],
+                {}
+            ).addTo(map_8c687f70b33541358db609d1607d7aa5);
+        
+    
+        var popup_5c56a9f8348a421b9fc18ff119320378 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_39d991e8ac9d46b18574925f03d70f20 = $(`<div id="html_39d991e8ac9d46b18574925f03d70f20" style="width: 100.0%; height: 100.0%;">New Castle</div>`)[0];
+            popup_5c56a9f8348a421b9fc18ff119320378.setContent(html_39d991e8ac9d46b18574925f03d70f20);
+        
+
+        marker_5fc58652ab4f407eb8c20bd51d730ce3.bindPopup(popup_5c56a9f8348a421b9fc18ff119320378)
+        ;
+
+        
+    
+</script>
