@@ -3,13 +3,13 @@ import folium
 import pandas as pd
 import csv
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path = "", static_folder = "assets")
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 
-@app.route('/map_plot', methods=['GET', 'POST'])
+@app.route('/marker_map_plot', methods=['GET', 'POST'])
 def map_plot():
     #Map object
     map = folium.Map(
@@ -24,9 +24,9 @@ def map_plot():
                 folium.Marker(location=[row['lat'], row['long']],
                     popup=row['suburb']).add_to(map)
 
-        map.save('templates/map.html'),
+        map.save('templates/marker_map.html'),
 
-        return render_template('map.html', data=data)
+        return render_template('marker_map.html', data=data)
 
 if __name__ == '__main__':
     app.run(debug=True)
