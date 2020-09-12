@@ -1,1 +1,1 @@
-web gunicorn map:app
+web gunicorn application:app
