@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import folium
 import pandas as pd
+from folium.plugins import HeatMap
 
 app = Flask(__name__, static_url_path = "", static_folder = "assets")
 
@@ -9,7 +10,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/marker_map_plot', methods=['GET', 'POST'])
-def map_plot():
+def coordinates_map_plot():
     #Map object
     map = folium.Map(
         location=[-31.840233, 145.612793],
@@ -20,13 +21,33 @@ def map_plot():
         with open(f) as file:
             data = pd.read_csv(file)         
             for index, row in data.iterrows():
-                folium.Marker(location=[row['lat'], row['long']],
-                    popup=row['suburb']).add_to(map)
+                folium.Marker(location=[row['latitude'], row['longitude']],
+                    popup=row['location']).add_to(map)
 
-        #Save marker_map as HTML in templates folder
-        map.save('templates/marker_map.html')
+    #Save marker_map as HTML in templates folder
+    map.save('templates/marker_map.html')
 
-        return render_template('marker_map.html', data=data)
+    return render_template('marker_map.html', data=data)
+
+#Display map for bush fire spread based on a heat map
+@app.route('/bushfire_spread_map', methods=['GET', 'POST'])
+def bushfire_spread_map():
+    #Map object
+    map = folium.Map(
+        location=[-25.2744, 133.7751],
+        zoom_start = 4)
+    
+    if request.method == 'POST':
+        f = request.form['csvfile']
+        with open(f) as file:
+            data = pd.read_csv(file)
+            lat_lon_data = data[['latitude','longitude']].values[:500]
+            HeatMap(lat_lon_data, radius=10).add_to(map)
+
+    #Save marker_map as HTML in templates folder
+    map.save('templates/bushfire_spread_map.html')
+
+    return render_template('bushfire_spread_map.html', data=data)
 
 if __name__ == '__main__':
     app.run(debug=True)
