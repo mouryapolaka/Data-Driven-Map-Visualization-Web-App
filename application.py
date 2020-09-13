@@ -41,7 +41,7 @@ def bushfire_spread_map():
         f = request.form['csvfile']
         with open(f) as file:
             data = pd.read_csv(file)
-            lat_lon_data = data[['latitude','longitude']].values[:500]
+            lat_lon_data = data[['latitude','longitude']]
             HeatMap(lat_lon_data, radius=10).add_to(map)
 
     #Save marker_map as HTML in templates folder
