@@ -23,6 +23,7 @@ def map_plot():
                 folium.Marker(location=[row['lat'], row['long']],
                     popup=row['suburb']).add_to(map)
 
+        #Save marker_map as HTML in templates folder
         map.save('templates/marker_map.html')
 
         return render_template('marker_map.html', data=data)
