@@ -17,12 +17,11 @@ def coordinates_map_plot():
         zoom_start=4)
 
     if request.method == 'POST':
-        f = request.form['marker_plot_csvfile']
-        with open(f) as file:
-            data = pd.read_csv(file)         
-            for index, row in data.iterrows():
-                folium.Marker(location=[row['latitude'], row['longitude']],
-                    popup=row['location']).add_to(marker_map)
+        f = request.files['marker_plot_csvfile']
+        data = pd.read_csv(f)         
+        for index, row in data.iterrows():
+            folium.Marker(location=[row['latitude'], row['longitude']],
+                popup=row['location']).add_to(marker_map)
 
     return marker_map.get_root().render() 
 
@@ -35,11 +34,10 @@ def bushfire_spread_map():
         zoom_start = 4)
     
     if request.method == 'POST':
-        f = request.form['csvfile']
-        with open(f) as file:
-            data = pd.read_csv(file)
-            lat_lon_data = data[['latitude','longitude']]
-            HeatMap(lat_lon_data, radius=9).add_to(heat_map)
+        f = request.files['bushfire_csvfile']
+        data = pd.read_csv(f)  
+        lat_lon_data = data[['latitude','longitude']]
+        HeatMap(lat_lon_data, radius=9).add_to(heat_map)
 
     return heat_map.get_root().render()
 
