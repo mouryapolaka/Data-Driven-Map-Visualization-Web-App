@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import folium
 import pandas as pd
 from folium.plugins import HeatMap
@@ -17,14 +17,14 @@ def coordinates_map_plot():
         zoom_start=4)
 
     if request.method == 'POST':
-        f = request.form['csvfile']
+        f = request.form['marker_plot_csvfile']
         with open(f) as file:
             data = pd.read_csv(file)         
             for index, row in data.iterrows():
                 folium.Marker(location=[row['latitude'], row['longitude']],
                     popup=row['location']).add_to(marker_map)
 
-    return marker_map.get_root().render()
+    return marker_map.get_root().render() 
 
 #Display map for bush fire spread based on a heat map
 @app.route('/bushfire_spread_map', methods=['GET', 'POST'])
@@ -39,7 +39,7 @@ def bushfire_spread_map():
         with open(f) as file:
             data = pd.read_csv(file)
             lat_lon_data = data[['latitude','longitude']]
-            HeatMap(lat_lon_data, radius=10).add_to(heat_map)
+            HeatMap(lat_lon_data, radius=9).add_to(heat_map)
 
     return heat_map.get_root().render()
 
