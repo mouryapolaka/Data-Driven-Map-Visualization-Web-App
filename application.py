@@ -25,8 +25,8 @@ def bushfire_spread_map():
         
         #group by all the rows according to date so that the map visualizes bush fires according to date
         date_groupby_list = df.groupby('date').apply(lambda x: x[['latitude','longitude']].values.tolist())
-        dt_obj = [datetime.strptime(i,'%Y-%m-%d') for i in date_groupby_list.index]
-        date_index = [x.strftime('%Y-%m-%d') for x in dt_obj]
+        dt_obj = [datetime.strptime(i,'%d-%m-%Y') for i in date_groupby_list.index]
+        date_index = [x.strftime('%d-%m-%Y') for x in dt_obj]
         date_hour_date = date_groupby_list.tolist()
 
         HeatMapWithTime(date_hour_date, index = date_index).add_to(bush_fire_map)
