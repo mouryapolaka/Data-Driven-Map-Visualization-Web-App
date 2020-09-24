@@ -42,6 +42,6 @@ $ pip3 install -r requirements.txt
 
 #### 4. Run the application
 ```bash
-$ python3 run application.py
+$ python3 application.py
 ```
 Click on the generated local host IP address to view the website on your browser.
